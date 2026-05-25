@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkflowLifecycleEventV1",
+  "type": "object",
+  "required": ["workflow_id", "run_id", "state"],
+  "properties": {
+    "workflow_id": { "type": "string" },
+    "run_id": { "type": "string" },
+    "state": {
+      "type": "string",
+      "enum": ["pending", "running", "failed", "succeeded", "canceled"]
+    },
+    "metadata": { "type": "object" }
+  }
+}

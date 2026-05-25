@@ -427,3 +427,24 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# --- Monorepo polyglot recommendations ---
+# Go
+*.test
+*.out
+coverage.out
+
+# Docker / local runtime
+.env.local
+.env.*.local
+
+# Terraform / IaC
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Kubernetes tooling
+*.kubeconfig
+
+# Mac/Linux editor temp files
+.DS_Store

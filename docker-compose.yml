@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  orchestrator-go:
+    image: ghcr.io/your-org/ai-sdlc-orchestrator/orchestrator-go:dev
+    env_file: .env
+    volumes:
+      - ./shared/configs:/app/configs:ro
+    depends_on:
+      - planner-sk
+      - reviewer-sk
+
+  worker-go:
+    image: ghcr.io/your-org/ai-sdlc-orchestrator/worker-go:dev
+    env_file: .env
+
+  qa-runner-go:
+    image: ghcr.io/your-org/ai-sdlc-orchestrator/qa-runner-go:dev
+    env_file: .env
+
+  planner-sk:
+    image: ghcr.io/your-org/ai-sdlc-orchestrator/planner-sk:dev
+    env_file: .env
+
+  reviewer-sk:
+    image: ghcr.io/your-org/ai-sdlc-orchestrator/reviewer-sk:dev
+    env_file: .env
+
+  nats:
+    image: nats:2.10
+    ports:
+      - "4222:4222"

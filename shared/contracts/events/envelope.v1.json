@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EventEnvelopeV1",
+  "type": "object",
+  "required": ["event_name", "event_version", "correlation_id", "timestamp_utc", "payload"],
+  "properties": {
+    "event_name": { "type": "string" },
+    "event_version": { "type": "string", "pattern": "^v[0-9]+$" },
+    "correlation_id": { "type": "string" },
+    "causation_id": { "type": ["string", "null"] },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "source": { "type": "string" },
+    "payload": { "type": "object" }
+  }
+}

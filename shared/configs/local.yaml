@@ -1,0 +1,9 @@
+runtime:
+  mode: local
+  transport: in-memory
+  command_timeout_seconds: 600
+ai:
+  planner_endpoint: http://planner-sk:8080
+  reviewer_endpoint: http://reviewer-sk:8081
+queue:
+  provider: memory
