@@ -1,0 +1,7 @@
+transport:
+  default: in-memory
+  nats:
+    url: ${NATS_URL}
+    subject_prefix: sdlc
+  grpc:
+    orchestrator_address: orchestrator-go:50051

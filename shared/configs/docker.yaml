@@ -1,0 +1,8 @@
+runtime:
+  mode: docker
+  transport: in-memory
+integrations:
+  gitlab:
+    base_url: ${GITLAB_BASE_URL}
+  aha:
+    base_url: ${AHA_BASE_URL}
